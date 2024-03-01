@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Select Image Folder</title>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Similar structure to describe.html for consistency -->
+        <div class="left-section">
+            <div class="connection-info">
+                <p>Current connection info: {{ local_ip }}:5000</p>
+            </div>
+            <form action="/select_folder" method="post">
+                <label for="folder_path">Browse for image folder:</label>
+                <input type="text" id="folder_path" name="folder_path" value="D:\Projects\AI\Training Datasets\Hayden">
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+        <div class="right-section">
+            <div class="image-frameQR">
+                <img src="{{ url_for('static', filename='qr_code.png') }}" alt="QR Code">
+            </div>
+        </div>
+    </div>
+</body>
+</html>

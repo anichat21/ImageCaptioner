@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Describe Image</title>
+</head>
+<body>
+    <div class="main-container">
+        <!-- Left Section for Text Inputs -->
+        <div class="left-section">
+            <h3>Image Description</h3>
+            <input type="text" id="global-prefix" placeholder="Global prefix">
+            <form id="description_form" action="/describe_image" method="post">
+                <textarea id="description-input" name="description" placeholder="Describe the image..."></textarea>
+                <input type="hidden" name="img_name" value="{{ img_path }}">
+                <button type="submit">Submit Description</button>
+            </form>
+            <div id="tag-container"></div>
+            <!-- Hidden element for passing tags data to JS -->
+            <div id="tags-data" style="display: none;">{{ session['tags']|tojson|safe }}</div>
+        </div>
+        <!-- Right Section for Image -->
+        <div class="right-section">
+            <div class="image-frame">
+                <img src="{{ img_path }}" alt="Image to describe">
+            </div>
+        </div>
+    </div>
+
+    <!-- Link to the external JS file -->
+    <script src="{{ url_for('static', filename='describe.js') }}"></script>
+</body>
+</html>

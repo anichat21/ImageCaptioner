@@ -1,0 +1,133 @@
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    background-color: #121212; /* Dark background for dark mode */
+    color: #ffffff; /* White text color for better readability in dark mode */
+}
+
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    background-color: #1e1e1e; /* Slightly lighter dark shade for the container */
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(255,255,255,0.1); /* Lighter shadow for dark mode */
+    margin: 20px auto;
+    max-width: 1000px;
+}
+
+.connection-info p {
+    margin-bottom: 20px; /* Adds more space below the connection info paragraph */
+    font-weight: bold;
+}
+
+.left-section {
+    flex: 1; 
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.left-section input[type="text"],
+.left-section textarea {
+    background-color: #333333; /* Dark grey background for input boxes */
+    color: #ffffff; /* White text */
+    border: 1px solid #444444; /* Slightly lighter border for some contrast */
+    width: 100%;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+}
+
+.left-section form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Adds space between form elements */
+}
+
+
+.left-section button[type="submit"] {
+    width: 100%; /* Make the button span the width of its container */
+    background-color: #ff69b4; /* Hot pink background */
+    color: #ffffff; /* White text */
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-bottom: 10px; /* Ensures space below each input and button */
+}
+
+.left-section button[type="submit"]:hover {
+    background-color: #ff1493; /* Darker shade of pink on hover */
+}
+
+.right-section {
+    flex: 1; /* Adjust based on your preference */
+    padding: 10px;
+    border-left: 1px solid #ddd; /* A light border to separate the sections */
+}
+
+.image-frame img {
+    max-width: 100%; /* Ensure the image does not exceed the container width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.image-frameQR img {
+    max-width: 100%;
+    height: auto;
+    filter: invert(100%); /* Inverts the colors */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.button:hover {
+    background-color: #0056b3;
+}
+
+.tag {
+    background-color: #ff69b4; /* Hot pink background for tags */
+    color: #ffffff; /* White text for tags */
+    padding: 5px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.tag:hover {
+    background-color: #ff1493; /* Darker shade of pink on hover */
+}
+
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+        max-width: 100%; /* Adjust the max-width for mobile devices */
+    }
+
+    .left-section, .right-section {
+        flex: none; /* Override the flex property for mobile */
+        width: 100%; /* Make each section take the full width */
+        padding: 10px 0; /* Adjust padding for a vertical layout */
+        border-left: none; /* Remove the border from the right section */
+    }
+
+    .left-section button[type="submit"] {
+        width: auto; /* Adjust button width as needed */
+        margin: 10px auto; /* Center the button with margin */
+    }
+
+    .image-frame img {
+        max-width: 90%; /* Adjust image max-width for mobile */
+        display: block; /* Ensure the image is block level for centering */
+        margin: 0 auto; /* Center the image */
+    }
+}
